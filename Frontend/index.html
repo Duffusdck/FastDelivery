@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastDelivery - Portal Logístico</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Librería de iconos vectoriales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS de Leaflet (OpenStreetMap) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Menú Lateral (Sidebar) -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2><i class="fa-solid fa-truck-fast"></i> FastDelivery</h2>
+            </div>
+            <nav class="menu" id="sideMenu">
+                <a href="Registro.html" data-view="authView" onclick="switchView('auth')">
+                    <i class="fa-solid fa-right-to-bracket"></i>Iniciar Sesión
+                </a>
+                <a href="index.html" data-view="trackingView" onclick="switchView('tracking')">
+                    <i class="fa-solid fa-magnifying-glass-location"></i> Rastrear Envío
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="user-info">
+                    <span>Portal Público de Consultas</span>
+                </div>
+            </header>
+
+            <section class="tracking-section">
+                <!-- Tarjeta del Buscador -->
+                <div class="card">
+                    <h2 class="section-title">Estado de Paquetes</h2>
+                    <p class="section-subtitle">Ingresa el número de guía para conocer la ubicación y el historial de tu envío.</p>
+                    
+                    <div class="search-box">
+                        <i class="fa-solid fa-box"></i>
+                        <input type="text" id="inputGuia" placeholder="Ej. GUI-101">
+                        <button id="btnBuscar">Buscar Paquete</button>
+                    </div>
+
+
+                <!-- Tarjeta de Resultados -->
+                <div id="resultado" class="result-area">
+                    <div class="empty-state">
+                        <i class="fa-solid fa-box-open"></i>
+                        <p>La información del rastreo aparecerá aquí.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal (Pop-up) para el Mapa -->
+    <div id="mapModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h3 style="color: #0056b3; margin-bottom: 15px;"><i class="fa-solid fa-route"></i> Ruta Estimada de Entrega</h3>
+            <div id="map" style="height: 400px; width: 100%; border-radius: 8px; background-color: #eee;"></div>
+        </div>
+    </div>
+
+
+    <script src="../Backend/Frontend/app.js"></script>
+    
+    <!-- Script de Leaflet (OpenStreetMap) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+</body>
+</html>
