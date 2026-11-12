@@ -1,1 +1,32 @@
+Para usar `nodemon server.js` necesitas:
+
+**1. Node.js y npm instalados**
+Verifica con:
+```
+node -v
+npm -v
+```
+Si no los tienes, descárgalos desde nodejs.org.
+
+**2. Instalar nodemon**
+Tienes dos opciones:
+
+- **Global** (puedes usar el comando `nodemon` directamente en cualquier proyecto):
+  ```
+  npm install -g nodemon
+  ```
+- **Local en el proyecto** (como dependencia de desarrollo):
+  ```
+  npm install --save-dev nodemon
+  ```
+  En este caso, el comando `nodemon server.js` no funciona directamente en la terminal; lo ejecutas con `npx nodemon server.js` o creando un script en el `package.json`:
+  ```json
+  "scripts": {
+    "dev": "nodemon server.js"
+  }
+  ```
+  y luego corres `npm run dev`.
+
+**3. Estar en la carpeta correcta**
+Abre la terminal en la carpeta del proyecto (donde está `server.js`) antes de ejecutar el comando.
 
