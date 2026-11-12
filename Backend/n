@@ -14,6 +14,9 @@ Tienes dos opciones:
 - **Global** (puedes usar el comando `nodemon` directamente en cualquier proyecto):
   ```
   npm install -g nodemon
+
+  npm install express mssql cors bcryptjs jsonwebtoken
+
   ```
 - **Local en el proyecto** (como dependencia de desarrollo):
   ```
